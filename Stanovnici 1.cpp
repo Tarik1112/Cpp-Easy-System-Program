@@ -65,7 +65,10 @@ void ispisStanovnika(Stanovnik s){
 int prirastajStanovnika(Drzava d, int n){
 	if (n == 1){
 		return d.brStanovnika ;
-	}else return prirastajStanovnika(d, n-1) + d.brStanovnika*0.01;
+	}else{
+		d.brStanovnika+=d.brStanovnika*0.01;
+		return prirastajStanovnika(d, n-1);
+	} 
 }
 
 int main(){
